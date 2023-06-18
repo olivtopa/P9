@@ -49,8 +49,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--
+        <dependency>
+        ... this XML dependency prevents the application from working ...
 
-
+            <groupId>de.flapdoodle.embed</groupId>
+            <artifactId>de.flapdoodle.embed.mongo.spring30x</artifactId>
+            <version>4.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        -->
     </dependencies>
 
     <build>
