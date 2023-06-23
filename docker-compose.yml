@@ -1,0 +1,20 @@
+version: '1'
+services:
+  diabetes-analysis:
+      image: diabetes-analysis:1.0.0
+      depends_on:
+        - patient-info
+        - dr-notes
+      network_mode: host
+
+  patient-info:
+      image: patient-info:1.0.0
+      network_mode: host
+
+  mongo:
+      image: mongo:latest
+      network_mode: host
+
+  dr-notes:
+      image: dr-notes:1.0.0
+      network_mode: host

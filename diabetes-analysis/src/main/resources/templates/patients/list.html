@@ -9,30 +9,28 @@
 </head>
 <body>
 <div class="container">
-    <div class="row"><h2>Patient Notes</h2></div>
+    <div class="row"><h2>Patients</h2></div>
     <div class="row">
-        <a href="/ui/notes/add" class="btn btn-primary btn-sm">Add New note</a>
         <table class="table table-bordered">
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Patient Id</th>
-                <th>Note</th>
+                <th>Given name</th>
+                <th>Family name</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="drNote : ${notes}">
-                <td th:text="${drNote.id}"></td>
-                <td th:text="${drNote.patientId}"></td>
-                <td th:text="${drNote.note}"></td>
+            <tr th:each="patient : ${patients}">
+                <td th:text="${patient.id}"></td>
+                <td th:text="${patient.givenName}"></td>
+                <td th:text="${patient.familyName}"></td>
                 <td class="text-center">
-                    <a th:href="@{/ui/notes/update/{id}(id=${drNote.id})}">Edit</a>
+                    <a th:href="@{/ui/patients/{patId}(patId=${patient.id})}">Assessment</a>
                 </td>
             </tr>
             </tbody>
         </table>
-        <a href="/ui/patients/list" class="btn btn-primary btn-sm">All patients</a>
     </div>
 </div>
 </body>
